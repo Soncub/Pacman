@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         LivesPrepare(3);
         MakeRound();
     }
+
+    private void MakeRound()
+    {
+
+    }
   
     private void ScorePrepare(int score)
     {

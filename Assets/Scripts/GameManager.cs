@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public SirQuack sirQuack;
     public Citros[] citros;
     public Transform duckies;
-    public int score {get;private set;}
-    public int lives {get;private set;}
+    public int score {get;private set; }
+    public int lives {get;private set; }
 
     private void Start()
     {

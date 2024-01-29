@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -192,3 +192,4 @@ public class FindPathAStar : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.M)) GetPath();
     }
 }
+*/

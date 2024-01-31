@@ -5,7 +5,7 @@ public class CitrosScatter : CitrosBehavior
     {
         this.citros.chase.Enable();
     }
-    private void OnTriggerEnter2d(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
         if (node != null && this.enabled && !this.citros.runaway.enabled)

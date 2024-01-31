@@ -44,15 +44,15 @@ public class Citros : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Sir Quack"))     
+        if(collision.gameObject.layer == LayerMask.NameToLayer("SirQuack"))     
         {   
             if (this.runaway.enabled)
             {
-            FindObjectOfType<GameManager>().CitroDies(this);
+            GameManager.Instance.CitroDies(this);
             }
             else
             {
-            FindObjectOfType<GameManager>().SirQuackDies();
+            GameManager.Instance.SirQuackDies();
             }
         }
     }

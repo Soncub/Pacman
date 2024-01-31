@@ -70,7 +70,7 @@ public class CitrosRunAway : CitrosBehavior
             }
         }
     }
-        private void OnTriggerEnter2d(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
         if (node != null && this.enabled)

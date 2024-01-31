@@ -9,13 +9,24 @@ public class GameManager : MonoBehaviour
     public Transform duckies;
     public int citroMultiplier { get; private set; } = 1;
     public int score {get;private set; }
-    public int lives ;
+    private int lives = 3;
+    int amount;
     public static GameManager Instance {get; private set;}
 
     private void Start()
     {
         CreateGame();
         
+    }
+
+private void Awake()
+    {
+        if (Instance != null) {
+            DestroyImmediate(gameObject);
+        } else {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     private void Update()
@@ -110,6 +121,7 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
+
     public void DuckieGet(Duckie duckie)
     {
         duckie.gameObject.SetActive(false);

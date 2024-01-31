@@ -18,6 +18,7 @@ public class Citros : MonoBehaviour
         this.scatter = GetComponent<CitrosScatter>();
         this.chase = GetComponent<CitrosChase>();
         this.runaway = GetComponent<CitrosRunAway>();
+        //gameObject.AddComponent<CircleCollider2D>();
     }
 
     private void Start()
@@ -44,8 +45,9 @@ public class Citros : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("SirQuack"))     
+        if(collision.gameObject.tag == "SirQuack")     
         {   
+            //Debug.Log("Touched Quack");
             if (this.runaway.enabled)
             {
             GameManager.Instance.CitroDies(this);
@@ -54,6 +56,9 @@ public class Citros : MonoBehaviour
             {
             GameManager.Instance.SirQuackDies();
             }
+        }
+        else {
+           // Debug.Log("Nothing is there");
         }
     }
 }

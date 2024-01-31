@@ -10,6 +10,7 @@ public class SirQuack : MonoBehaviour
     private void Awake()
     {
         this.movement = GetComponent<Movement>();
+        gameObject.AddComponent<CircleCollider2D>();
     }
     //Sir Quack will change directions depending on which button is pressed
     private void Update()

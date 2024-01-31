@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public SirQuack sirQuack;
+    public SirQuack sirquack;
     public Citros[] citros;
     public Transform duckies;
+    public int citroMultiplier { get; private set; } = 1;
     public int score {get;private set; }
     public int lives {get;private set; }
 
@@ -37,32 +38,33 @@ public class GameManager : MonoBehaviour
     {
 
         // put the duckies back onto the map in the new round
-        foreach (Transform duckies in this.duckies)
+        foreach (Transform duckie in this.duckies)
         {
-            duckies.gameObject.SetActive(true);
+            duckie.gameObject.SetActive(true);
         }
 
         // calls citros and sir quack
-        DeathRestart();
+        ResetState();
     }
 
     // function that resets the citros and sir Quack's position without changing the pellets
-    private void DeathRestart() 
+    private void ResetState() 
     {
         // put sir quack back onto the map / active
-        this.sirQuack.gameObject.SetActive(true);
+        this.sirquack.ResetState();
 
+        ResetCitroMultiplier();
         // put the citros back onto the map / set active
         for (int i = 0; i < this.citros.Length; i++)
         {
-            this.citros[i].gameObject.SetActive(true);
+            this.citros[i].ResetState();
         }
     }
 
     private void GameOver()
     {
         // deactivates sir Quack
-        this.sirQuack.gameObject.SetActive(false);
+        this.sirquack.gameObject.SetActive(false);
 
         // deactivates citros
         for (int i = 0; i < this.citros.Length; i++)
@@ -85,23 +87,59 @@ public class GameManager : MonoBehaviour
     // when Sir Quack kills Citro with sword, increment score
     public void CitroDies(Citros citros)
     {
-        ScorePrepare(this.score + citros.points);
+        ScorePrepare(this.score + (citros.points * this.citroMultiplier));
+        this.citroMultiplier++;
     }
 
     // when Citro kills Sir Quack, deactivate Sir Quack and take away a life
     public void SirQuackDies()
     {
-        this.sirQuack.gameObject.SetActive(false);
+        this.sirquack.gameObject.SetActive(false);
         LivesPrepare(this.lives -= 1);
 
         // check lives, if lives, reset round AFTER 3 seconds, otherwise end game
         if (this.lives > 0) 
         {
-            Invoke(nameof(DeathRestart), 3.0f);
+            Invoke(nameof(ResetState), 3.0f);
         }
         else 
         {
             GameOver();
         }
+    }
+    public void DuckieGet(Duckie duckie)
+    {
+        duckie.gameObject.SetActive(false);
+        ScorePrepare(this.score + duckie.points);
+        if(!HasRemainingDuckies())
+        {
+            this.sirquack.gameObject.SetActive(false);
+            Invoke(nameof(MakeRound),3.0f);
+        }
+    }
+    public void SwordGet(Sword duckie)
+    {
+        for (int i = 0; i < this.citros.Length; i++)
+        {
+            this.citros[i].runaway.Enable(duckie.duration);
+        }
+        DuckieGet(duckie);
+        CancelInvoke();
+        Invoke(nameof(ResetCitroMultiplier), duckie.duration);
+    }
+    private bool HasRemainingDuckies()
+    {
+        foreach (Transform duckie in this.duckies)
+        {
+            if (duckies.gameObject.activeSelf)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+     private void ResetCitroMultiplier()
+    {
+        this.citroMultiplier = 1;
     }
 }

@@ -287,7 +287,6 @@ MonoBehaviour:
   - {fileID: 1700882888}
   - {fileID: 748039001}
   duckies: {fileID: 0}
-  lives: 0
 --- !u!114 &312534603 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2674305092184360296, guid: 44bf974a0546e6445a8006e0040cbf78, type: 3}
@@ -6121,9 +6120,9 @@ GameObject:
   - component: {fileID: 753793698}
   - component: {fileID: 753793699}
   - component: {fileID: 753793700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SirQuack
-  m_TagString: Untagged
+  m_TagString: SirQuack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 654858125053519766}
   - component: {fileID: 5126682281933484009}
   - component: {fileID: 299160821672313227}
-  - component: {fileID: 722197562419518241}
   - component: {fileID: 2205556428111581473}
   - component: {fileID: 6740114358370623992}
+  - component: {fileID: 722197562419518241}
   m_Layer: 7
   m_Name: CitroBody
   m_TagString: Untagged
@@ -127,23 +127,6 @@ MonoBehaviour:
   duration: 0
   inside: {fileID: 0}
   outside: {fileID: 0}
---- !u!114 &722197562419518241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059549890063297574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64d35b6bcf31b0408ce9abb88de7dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 8
-  body: {fileID: 0}
-  eyes: {fileID: 0}
-  blue: {fileID: 0}
-  white: {fileID: 0}
 --- !u!114 &2205556428111581473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +153,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 20
+--- !u!114 &722197562419518241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059549890063297574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64d35b6bcf31b0408ce9abb88de7dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 8
+  body: {fileID: 0}
+  eyes: {fileID: 0}
+  blue: {fileID: 0}
+  white: {fileID: 0}
 --- !u!1 &7202712311823772714
 GameObject:
   m_ObjectHideFlags: 0

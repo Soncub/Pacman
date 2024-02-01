@@ -1,5 +1,5 @@
 using UnityEngine;
-//behavior used her is inherited to other Citro Behaviors
+//behavior used here is inherited to other Citro Behaviors
 public abstract class CitrosBehavior : MonoBehaviour
 {
     public Citros citros {get;private set;}
@@ -7,7 +7,7 @@ public abstract class CitrosBehavior : MonoBehaviour
     private void Awake()
     {
         this.citros = GetComponent<Citros>();
-        this.enabled = false;
+        //this.enabled = false;
     }
     public void Enable()
     {

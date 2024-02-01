@@ -35,11 +35,11 @@ public class GameManager : MonoBehaviour
         if (this.lives <= 0)
         {
             if (Input.anyKeyDown)
-            {
-                CreateGame();
-            }
+        {
+            CreateGame();
         }
     }
+}
     private void CreateGame()
     {
         ScorePrepare(0);

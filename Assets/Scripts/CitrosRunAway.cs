@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CitrosRunAway : CitrosBehavior 
 {
-    public SpriteRenderer body;
+
     public SpriteRenderer eyes;
     public SpriteRenderer blue;
     public SpriteRenderer white;
@@ -11,7 +11,7 @@ public class CitrosRunAway : CitrosBehavior
     public override void Enable(float duration)
     {
         base.Enable(duration);
-        this.body.enabled = false;
+
         this.eyes.enabled = false;
         this.blue.enabled = true;
         this.white.enabled = false;
@@ -21,7 +21,7 @@ public class CitrosRunAway : CitrosBehavior
     public override void Disable()
     {
         base.Disable();
-        this.body.enabled = true;
+
         this.eyes.enabled = true;
         this.blue.enabled = false;
         this.white.enabled = false;
@@ -44,7 +44,7 @@ public class CitrosRunAway : CitrosBehavior
         position.z = this.citros.transform.position.z;
         this.citros.transform.position = position;
         this.citros.idle.Enable(this.duration);
-        this.body.enabled = true;
+
         this.eyes.enabled = true;
         this.blue.enabled = false;
         this.white.enabled = false;
@@ -62,7 +62,7 @@ public class CitrosRunAway : CitrosBehavior
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("SirQuack"))     
+        if(collision.gameObject.tag == "SirQuack")     
         {   
             if (this.enabled)
             {

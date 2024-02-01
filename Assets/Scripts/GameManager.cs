@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-private void Awake()
+    private void Awake()
     {
         if (Instance != null) {
             DestroyImmediate(gameObject);
@@ -35,11 +35,11 @@ private void Awake()
         if (this.lives <= 0)
         {
             if (Input.anyKeyDown)
-            {
-                CreateGame();
-            }
+        {
+            CreateGame();
         }
     }
+}
     private void CreateGame()
     {
         ScorePrepare(0);

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5995249361810348597}
   - component: {fileID: 5208734702191940960}
   - component: {fileID: 2099186587834251511}
+  - component: {fileID: 2856205290579580697}
   m_Layer: 8
   m_Name: Duckies
   m_TagString: Duckie
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.03448276, y: 0.03448276}
   m_EdgeRadius: 0
+--- !u!114 &2856205290579580697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100200682812963454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d75b6cab7ba345d48d0d10debd9e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 10

@@ -108,6 +108,13 @@ public class GameManager : MonoBehaviour
     public void SirQuackDies()
     {
         this.sirquack.gameObject.SetActive(false);
+
+         // deactivates citros
+        for (int i = 0; i < this.citros.Length; i++)
+        {
+            this.citros[i].gameObject.SetActive(false);
+        }
+        
         LivesPrepare(this.lives - 1);
         
 

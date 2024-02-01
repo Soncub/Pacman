@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public Transform duckies;
     public int citroMultiplier { get; private set; } = 1;
     public int score {get;private set; }
-    private int lives = 3;
+    private float lives = 3;
     int amount;
     public static GameManager Instance {get; private set;}
 
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         // set score
         this.score = score;
     }
-    private void LivesPrepare(int lives)
+    private void LivesPrepare(float lives)
     {
         // set lives in game
         this.lives = lives;
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public void SirQuackDies()
     {
         this.sirquack.gameObject.SetActive(false);
-        LivesPrepare(lives - 1);
+        LivesPrepare(lives - 0.5f);
         
 
         // check lives, if lives, reset round AFTER 3 seconds, otherwise end game

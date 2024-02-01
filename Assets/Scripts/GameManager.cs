@@ -109,6 +109,12 @@ public class GameManager : MonoBehaviour
     {
         this.sirquack.gameObject.SetActive(false);
         LivesPrepare(lives - 0.5f);
+
+        // deactivates citros when sir quack dies
+        for (int i = 0; i < this.citros.Length; i++)
+        {
+            this.citros[i].gameObject.SetActive(false);
+        }
         
 
         // check lives, if lives, reset round AFTER 3 seconds, otherwise end game

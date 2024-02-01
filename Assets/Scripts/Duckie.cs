@@ -3,15 +3,16 @@ using UnityEngine;
 public class Duckie : MonoBehaviour
 {
     public int points = 10;
-    protected virtual void CitroSlay()
+    protected virtual void Collect()
     {
-        FindObjectOfType<GameManager>().DuckieGet(this);
+        //FindObjectOfType<GameManager>().DuckieGet(this);
+        GameManager.Instance.DuckieGet(this);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("SirQuack"))
+        if (other.gameObject.tag == "SirQuack")
         {
-            CitroSlay();
+            Collect();
         }
     }
 }

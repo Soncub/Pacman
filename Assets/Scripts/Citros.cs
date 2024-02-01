@@ -9,6 +9,7 @@ public class Citros : MonoBehaviour
     public CitrosRunAway runaway {get;private set;}
     public CitrosBehavior initialBehavior;
     public Transform target;
+
     public int points = 200;
 
     private void Awake()
@@ -54,7 +55,7 @@ public class Citros : MonoBehaviour
             }
             else
             {
-            GameManager.Instance.SirQuackDies();
+                GameManager.Instance.SirQuackDies();
             }
         }
         else {

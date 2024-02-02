@@ -6,7 +6,8 @@ public class CitrosRunAway : CitrosBehavior
     public SpriteRenderer eyes;
     public SpriteRenderer blue;
     public SpriteRenderer white;
-    public bool eaten {get; private set;}
+    public SpriteRenderer justEyes;
+    public bool eaten; //{get; private set;}
 
     public override void Enable(float duration)
     {
@@ -15,6 +16,7 @@ public class CitrosRunAway : CitrosBehavior
         this.eyes.enabled = false;
         this.blue.enabled = true;
         this.white.enabled = false;
+        this.justEyes.enabled = false;
 
         Invoke(nameof(Flash), duration / 2.0f);
     }
@@ -23,6 +25,7 @@ public class CitrosRunAway : CitrosBehavior
         base.Disable();
 
         this.eyes.enabled = true;
+        this.justEyes.enabled = false;
         this.blue.enabled = false;
         this.white.enabled = false;
     }
@@ -45,16 +48,19 @@ public class CitrosRunAway : CitrosBehavior
         this.citros.transform.position = position;
         this.citros.idle.Enable(this.duration);
 
-        this.eyes.enabled = true;
+        //this.eyes.enabled = true;
+        this.justEyes.enabled = true;
         this.blue.enabled = false;
         this.white.enabled = false;
     }
 
+    // makes ghosts slow 
     private void OnEnable()
     {
+        blue.GetComponent<AnimatedSprite>().Restart();
         this.citros.movement.speedMultiplier = 0.5f;
         this.eaten = false;
-    }
+    }  
     private void OnDisable()
     {
         this.citros.movement.speedMultiplier = 1.0f;

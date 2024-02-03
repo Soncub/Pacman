@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +16,8 @@ public class GameManager : MonoBehaviour
     private float lives = 3;
     int amount;
     public static GameManager Instance {get; private set;}
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI livesText;
 
     private void Start()
     {
@@ -90,11 +96,14 @@ public class GameManager : MonoBehaviour
     {
         // set score
         this.score = score;
+        scoreText.text = "Score: " + score.ToString();
     }
     private void LivesPrepare(float lives)
     {
         // set lives in game
         this.lives = lives;
+        livesText.text = "Lives: " + lives.ToString();
+        
     }
 
     // when Sir Quack kills Citro with sword, increment score
@@ -136,7 +145,7 @@ public class GameManager : MonoBehaviour
         if(HasRemainingDuckies() == false)
         {
             this.sirquack.gameObject.SetActive(false);
-            Invoke(nameof(MakeRound),3.0f);
+            // ------------------ Invoke(nameof(MakeRound),3.0f);
         } 
     }
     public void SwordGet(Sword duckie)
@@ -154,7 +163,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (Transform duckie in this.duckies)
         {
-            if (duckies.gameObject.activeInHierarchy)
+            if (duckie.gameObject.activeInHierarchy)
             {
                 //Debug.Log("TRUE");
                 return true;

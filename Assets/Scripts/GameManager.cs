@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
         duckie.gameObject.SetActive(false);
         ScorePrepare(this.score + duckie.points);
 
-        if(HasRemainingDuckies() == false)
+        if(!HasRemainingDuckies())
         {
             this.sirquack.gameObject.SetActive(false);
             Invoke(nameof(MakeRound),3.0f);
@@ -156,12 +156,12 @@ public class GameManager : MonoBehaviour
         {
             if (duckies.gameObject.activeInHierarchy)
             {
-                //Debug.Log("TRUE");
+                Debug.Log("TRUE");
                 return true;
                 
             }
         }
-        //Debug.Log("I AM FALSE");
+        Debug.Log("I AM FALSE");
         return false;
         
     }

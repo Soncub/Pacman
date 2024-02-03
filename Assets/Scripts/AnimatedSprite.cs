@@ -27,7 +27,7 @@ public class AnimatedSprite : MonoBehaviour
         {
             this.animationFrame = 0;
         }
-        if(this.animationFrame >= 0&& this.animationFrame < this.sprites.Length)
+        if(this.animationFrame >= 0 && this.animationFrame < this.sprites.Length)
         {
             this.spriteRenderer.sprite = this.sprites[this.animationFrame];
         }

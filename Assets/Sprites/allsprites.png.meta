@@ -977,6 +977,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: pencil
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 804
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8240cade94ffca42b078ea873ef73f3
+      internalID: 355520965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notebook
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 801
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0754b24b60b6466468e7d92d5084a727
+      internalID: 576681565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1030,6 +1072,8 @@ TextureImporter:
       Zestee_EyesRight: 654752306
       Zestee_EyesUp: -1841043138
       Zestee_White: -523704638
+      notebook: 576681565
+      pencil: 355520965
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

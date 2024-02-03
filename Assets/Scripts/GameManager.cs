@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public SirQuack sirquack;
     public Citros[] citros;
     public Transform duckies;
+    public SchoolSupply supply;
     public int citroMultiplier { get; private set; } = 1;
     public int score {get;private set; }
     private float lives = 3;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         CreateGame();
+        supply.gameObject.SetActive(false);
         
     }
 
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
             if (Input.anyKeyDown)
         {
             CreateGame();
-        }
+        }  
     }
 }
     private void CreateGame()
@@ -100,6 +102,15 @@ public class GameManager : MonoBehaviour
         // set score
         this.score = score;
         scoreText.text = "Score: " + score.ToString();
+
+         if (score == 500 || score == 1500) {
+            
+            Invoke(nameof(SchoolSupplyAppear), 0f);
+
+        }
+        if (score == 10000){
+            LivesPrepare(lives+1);
+        }
     }
     private void LivesPrepare(float lives)
     {
@@ -164,18 +175,23 @@ public class GameManager : MonoBehaviour
         Invoke(nameof(ResetCitroMultiplier), duckie.duration);
     }
 
+    public void SchoolSupplyGet(SchoolSupply supply){
+        supply.gameObject.SetActive(false);
+        ScorePrepare(this.score + supply.points);
+    }
+
     private bool HasRemainingDuckies()
     {
         foreach (Transform duckie in this.duckies)
         {
             if (duckie.gameObject.activeInHierarchy)
             {
-                Debug.Log("TRUE");
+                //Debug.Log("TRUE");
                 return true;
                 
             }
         }
-        Debug.Log("I AM FALSE");
+        //Debug.Log("I AM FALSE");
         return false;
         
     }
@@ -183,5 +199,9 @@ public class GameManager : MonoBehaviour
     private void ResetCitroMultiplier()
     {
         this.citroMultiplier = 1;
+    }
+
+    void SchoolSupplyAppear() {
+        supply.gameObject.SetActive(true);
     }
 }

@@ -31,6 +31,11 @@ public class SirQuack : MonoBehaviour
         {
             this.movement.SetDirection(Vector2.right);
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
     }
     public void ResetState()
     {

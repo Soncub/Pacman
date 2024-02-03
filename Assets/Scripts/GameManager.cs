@@ -17,7 +17,10 @@ public class GameManager : MonoBehaviour
     int amount;
     public static GameManager Instance {get; private set;}
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI livesText;
+   
+    [SerializeField] private Sprite [] livesSprite;
+    [SerializeField] private Image livesImage;
+    int lives2;
 
     private void Start()
     {
@@ -102,7 +105,9 @@ public class GameManager : MonoBehaviour
     {
         // set lives in game
         this.lives = lives;
-        livesText.text = "Lives: " + lives.ToString();
+        lives2 = (int)lives;
+        //livesText.text = "Lives: " + lives.ToString();
+        livesImage.sprite = livesSprite[lives2];
         
     }
 

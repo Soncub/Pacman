@@ -160,8 +160,13 @@ public class GameManager : MonoBehaviour
 
         if(!HasRemainingDuckies())
         {
-            this.sirquack.gameObject.SetActive(false);
+            //this.sirquack.gameObject.SetActive(false);
             // ------------------ Invoke(nameof(MakeRound),3.0f);
+
+            for (int i = 0; i < this.citros.Length; i++)
+        {
+            this.citros[i].gameObject.SetActive(false);
+        }
         } 
     }
     public void SwordGet(Sword duckie)

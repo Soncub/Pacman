@@ -7,16 +7,17 @@ public class CitrosRunAway : CitrosBehavior
     public SpriteRenderer blue;
     public SpriteRenderer white;
     public SpriteRenderer justEyes;
+    
     public bool eaten; //{get; private set;}
 
     public override void Enable(float duration)
     {
         base.Enable(duration);
 
-        this.eyes.enabled = false;
-        this.blue.enabled = true;
-        this.white.enabled = false;
-        this.justEyes.enabled = false;
+        eyes.enabled = false;
+        blue.enabled = true;
+        white.enabled = false;
+        justEyes.enabled = false;
 
         Invoke(nameof(Flash), duration / 2.0f);
     }
@@ -24,53 +25,53 @@ public class CitrosRunAway : CitrosBehavior
     {
         base.Disable();
 
-        this.eyes.enabled = true;
-        this.justEyes.enabled = false;
-        this.blue.enabled = false;
-        this.white.enabled = false;
+        eyes.enabled = true;
+        justEyes.enabled = false;
+        blue.enabled = false;
+        white.enabled = false;
     }
     private void Flash()
     {
         // ADD ANIMATED SPRITE
-        if (!this.eaten)
+        if (!eaten)
         {
-            this.blue.enabled = false;
-            this.white.enabled = true;
-            this.white.GetComponent<AnimatedSprite>().Restart();
+            blue.enabled = false;
+            white.enabled = true;
+            white.GetComponent<AnimatedSprite>().Restart();
         }
     }
 
     private void Eaten()
     {
-        this.eaten = true;
-        Vector3 position = this.citros.idle.inside.position;
-        position.z = this.citros.transform.position.z;
-        this.citros.transform.position = position;
-        this.citros.idle.Enable(this.duration);
+        eaten = true;
+        Vector3 position = citros.idle.inside.position;
+        //position.z = this.citros.transform.position.z;
+        citros.transform.position = position;
+        citros.idle.Enable(this.duration);
 
         //this.eyes.enabled = true;
-        this.justEyes.enabled = true;
-        this.blue.enabled = false;
-        this.white.enabled = false;
+        justEyes.enabled = true;
+        blue.enabled = false;
+        white.enabled = false;
     }
 
     // makes ghosts slow 
     private void OnEnable()
     {
-        blue.GetComponent<AnimatedSprite>().Restart();
-        this.citros.movement.speedMultiplier = 0.5f;
-        this.eaten = false;
+        //blue.GetComponent<AnimatedSprite>().Restart();
+        citros.movement.speedMultiplier = 0.5f;
+        eaten = false;
     }  
     private void OnDisable()
     {
-        this.citros.movement.speedMultiplier = 1.0f;
-        this.eaten = false;
+        citros.movement.speedMultiplier = 1.0f;
+        eaten = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "SirQuack")     
         {   
-            if (this.enabled)
+            if (enabled)
             {
             Eaten();
             }
@@ -79,7 +80,7 @@ public class CitrosRunAway : CitrosBehavior
         private void OnTriggerEnter2D(Collider2D other)
     {
         Node node = other.GetComponent<Node>();
-        if (node != null && this.enabled)
+        if (node != null && enabled)
         {
            Vector2 direction = Vector2.zero;
            float maxDistance = float.MinValue;
@@ -94,7 +95,7 @@ public class CitrosRunAway : CitrosBehavior
                     maxDistance = distance;
                 }
            }
-        this.citros.movement.SetDirection(direction);
+        citros.movement.SetDirection(direction);
         }
     }
 }

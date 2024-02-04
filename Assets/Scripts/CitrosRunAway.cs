@@ -7,6 +7,7 @@ public class CitrosRunAway : CitrosBehavior
     public SpriteRenderer blue;
     public SpriteRenderer white;
     public SpriteRenderer justEyes;
+    
     public bool eaten; //{get; private set;}
 
     public override void Enable(float duration)
@@ -20,6 +21,7 @@ public class CitrosRunAway : CitrosBehavior
 
         Invoke(nameof(Flash), duration / 2.0f);
     }
+
     public override void Disable()
     {
         base.Disable();
@@ -58,7 +60,7 @@ public class CitrosRunAway : CitrosBehavior
     private void OnEnable()
     {
         blue.GetComponent<AnimatedSprite>().Restart();
-        this.citros.movement.speedMultiplier = 0.5f;
+        citros.movement.speedMultiplier = 0.5f;
         this.eaten = false;
     }  
     private void OnDisable()

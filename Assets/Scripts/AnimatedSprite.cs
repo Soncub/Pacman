@@ -37,4 +37,13 @@ public class AnimatedSprite : MonoBehaviour
         this.animationFrame = -1;
         Advance();
     }
+    private void OnEnable()
+    {
+        spriteRenderer.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        spriteRenderer.enabled = false;
+    }
 }

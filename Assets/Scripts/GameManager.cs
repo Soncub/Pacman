@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
             this.citros[i].gameObject.SetActive(false);
         }
             // ------------------ Invoke(nameof(MakeRound),3.0f);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Second Level");
             MakeRound();
             this.sirquack.gameObject.SetActive(true);
         } 

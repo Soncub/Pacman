@@ -18,6 +18,6 @@ public class QuitButton : MonoBehaviour
     }
     public void LoadLevel1()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("");
+        Application.Quit();
     }
 }

@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         {
             CreateGame();
         }  
+
     }
 }
     private void CreateGame()

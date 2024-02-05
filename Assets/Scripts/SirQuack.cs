@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Movement))]
 
@@ -36,6 +37,12 @@ public class SirQuack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadScene("TitleScreen");
+        }
+
     }
     public void ResetState()
     {

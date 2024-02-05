@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 2cba7ffb97abe4024b8cec7626e9d8fe
+  - enabled: 1
     path: Assets/Scenes/Pacman.unity
     guid: cf6465977782243a9b8b088bd034b715
   - enabled: 1
@@ -14,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditsScreen.unity
     guid: dc9ad8c8f744b4d818e5b7992aae14ac
+  - enabled: 1
+    path: Assets/Scenes/DefeatScreen.unity
+    guid: 157bfbd863fab4311b859e2352c13260
+  - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: 4342866c75a97417d86d28f9b81e42cb
   m_configObjects: {}

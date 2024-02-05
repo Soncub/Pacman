@@ -5,6 +5,7 @@ using UnityEngine;
 public class SchoolSupply : MonoBehaviour
 {
     public int points = 100; //???
+    public AudioClip schoolSupply;
     protected virtual void Collect()
     {
         FindObjectOfType<GameManager>().SchoolSupplyGet(this);
@@ -15,6 +16,7 @@ public class SchoolSupply : MonoBehaviour
         if (other.gameObject.tag == "SirQuack")
         {
             Collect();
+            AudioSource.PlayClipAtPoint(schoolSupply, transform.position);
         }
     }
 }

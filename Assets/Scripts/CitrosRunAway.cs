@@ -7,7 +7,7 @@ public class CitrosRunAway : CitrosBehavior
     public SpriteRenderer blue;
     public SpriteRenderer white;
     public SpriteRenderer justEyes;
-    
+    public AudioClip consumed;
     public bool eaten; //{get; private set;}
 
     public override void Enable(float duration)
@@ -21,6 +21,7 @@ public class CitrosRunAway : CitrosBehavior
 
         Invoke(nameof(Flash), duration / 2.0f);
     }
+
     public override void Disable()
     {
         base.Disable();
@@ -58,9 +59,9 @@ public class CitrosRunAway : CitrosBehavior
     // makes ghosts slow 
     private void OnEnable()
     {
-        //blue.GetComponent<AnimatedSprite>().Restart();
+        blue.GetComponent<AnimatedSprite>().Restart();
         citros.movement.speedMultiplier = 0.5f;
-        eaten = false;
+        this.eaten = false;
     }  
     private void OnDisable()
     {
@@ -73,6 +74,7 @@ public class CitrosRunAway : CitrosBehavior
         {   
             if (enabled)
             {
+            AudioSource.PlayClipAtPoint(consumed, transform.position);
             Eaten();
             }
         }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Citros[] citros;
     public Transform duckies;
     public SchoolSupply supply;
+    public AudioClip kill;
     public int citroMultiplier { get; private set; } = 1;
     public int score {get;private set; }
     private float lives = 3;
@@ -132,6 +134,7 @@ public class GameManager : MonoBehaviour
     // when Citro kills Sir Quack, deactivate Sir Quack and take away a life
     public void SirQuackDies()
     {
+        AudioSource.PlayClipAtPoint(kill, transform.position);
         this.sirquack.gameObject.SetActive(false);
         LivesPrepare(lives - 0.5f);
 
@@ -161,12 +164,14 @@ public class GameManager : MonoBehaviour
         if(!HasRemainingDuckies())
         {
             //this.sirquack.gameObject.SetActive(false);
-            // ------------------ Invoke(nameof(MakeRound),3.0f);
-
             for (int i = 0; i < this.citros.Length; i++)
         {
             this.citros[i].gameObject.SetActive(false);
         }
+            // ------------------ Invoke(nameof(MakeRound),3.0f);
+            SceneManager.LoadScene("Second Level");
+            MakeRound();
+            this.sirquack.gameObject.SetActive(true);
         } 
     }
     public void SwordGet(Sword duckie)

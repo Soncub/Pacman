@@ -36,6 +36,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6484156300484431894}
     - target: {fileID: 722197562419518241, guid: 307f91cfc2daa3040a17dcdac3d1b92b, type: 3}
+      propertyPath: consumed
+      value: 
+      objectReference: {fileID: 8300000, guid: cd159ac15a5664f74b9eb71e628577cb, type: 3}
+    - target: {fileID: 722197562419518241, guid: 307f91cfc2daa3040a17dcdac3d1b92b, type: 3}
       propertyPath: justEyes
       value: 
       objectReference: {fileID: 4667279548974101239}

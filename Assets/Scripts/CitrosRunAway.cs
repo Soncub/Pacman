@@ -7,7 +7,7 @@ public class CitrosRunAway : CitrosBehavior
     public SpriteRenderer blue;
     public SpriteRenderer white;
     public SpriteRenderer justEyes;
-    
+    public AudioClip consumed;
     public bool eaten; //{get; private set;}
 
     public override void Enable(float duration)
@@ -74,6 +74,7 @@ public class CitrosRunAway : CitrosBehavior
         {   
             if (this.enabled)
             {
+            AudioSource.PlayClipAtPoint(consumed, transform.position);
             Eaten();
             }
         }

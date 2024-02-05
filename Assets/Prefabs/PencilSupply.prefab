@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 100
+  schoolSupply: {fileID: 8300000, guid: f62acb73013c04999a46b536c5e3a2f1, type: 3}

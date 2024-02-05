@@ -3,6 +3,7 @@ using UnityEngine;
 public class Duckie : MonoBehaviour
 {
     public int points = 5;
+    public AudioClip duckQuack;
     protected virtual void Collect()
     {
         FindObjectOfType<GameManager>().DuckieGet(this);
@@ -13,6 +14,7 @@ public class Duckie : MonoBehaviour
         if (other.gameObject.tag == "SirQuack")
         {
             Collect();
+            AudioSource.PlayClipAtPoint(duckQuack, transform.position);
         }
     }
 }

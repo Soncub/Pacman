@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d75b6cab7ba345d48d0d10debd9e776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 10
+  points: 5
+  duckQuack: {fileID: 8300000, guid: aff41f6c469c744929657353ddbf4aa1, type: 3}

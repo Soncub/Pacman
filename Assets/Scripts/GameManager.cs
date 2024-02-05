@@ -16,8 +16,12 @@ public class GameManager : MonoBehaviour
     public AudioClip kill;
     public int citroMultiplier { get; private set; } = 1;
     public int score {get;private set; }
+    public static int totalScore;
     private float lives = 3;
     int amount;
+    private bool supplyTriggered = false;
+    private bool supplyAppeared = false;
+    private bool supplyAppeared2 = false;
     public static GameManager Instance {get; private set;}
     public TextMeshProUGUI scoreText;
    
@@ -34,12 +38,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null) {
-            DestroyImmediate(gameObject);
-        } else {
+     
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+            //DontDestroyOnLoad(gameObject);
+        
     }
 
     private void Update()
@@ -102,16 +104,30 @@ public class GameManager : MonoBehaviour
     private void ScorePrepare(int score)
     {
         // set score
-        this.score = score;
-        scoreText.text = "Score: " + score.ToString();
+        totalScore += score;
+        scoreText.text = "Score: " + totalScore.ToString();
 
-         if (score == 500 || score == 1500) {
+         if (totalScore >= 1000) {
+            if (supplyAppeared == false){
             
             Invoke(nameof(SchoolSupplyAppear), 0f);
+            supplyAppeared = true;
+            }
 
         }
-        if (score == 10000){
-            LivesPrepare(lives+1);
+        if (totalScore >= 3000) {
+            if (supplyAppeared2 == false){
+            
+            Invoke(nameof(SchoolSupplyAppear), 0f);
+            supplyAppeared2 = true;
+            }
+
+        }
+        if (totalScore >= 10000){
+            if (supplyTriggered == false){
+            LivesPrepare(lives+1); 
+            supplyTriggered = true;
+            }
         }
     }
     private void LivesPrepare(float lives)

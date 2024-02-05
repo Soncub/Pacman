@@ -125,6 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 10
-  duckQuack: {fileID: 0}
+  duckQuack: {fileID: 8300000, guid: 8993f57b027d9418db86a525952106f6, type: 3}
   duration: 8
   sword: {fileID: 8300000, guid: 8993f57b027d9418db86a525952106f6, type: 3}

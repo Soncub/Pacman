@@ -7945,6 +7945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230071101}
   - component: {fileID: 1230071100}
+  - component: {fileID: 1230071102}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -8063,6 +8064,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1230071102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230071099}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf1e5e2022468e4194b845de3b7047e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1270055242 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8990723098353904110, guid: 195c69ec614ced64b8fe3dd63af486b3, type: 3}
@@ -8246,6 +8259,7 @@ GameObject:
   - component: {fileID: 1412985889}
   - component: {fileID: 1412985888}
   - component: {fileID: 1412985887}
+  - component: {fileID: 1412985890}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -8303,6 +8317,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1412985890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412985886}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf1e5e2022468e4194b845de3b7047e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1500240670 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 293382286564190018, guid: 619ce5483d8d9f2458d7dc40477b6f6d, type: 3}

@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
         {
             this.citros[i].gameObject.SetActive(false);
         }
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DefeatScreen");
     }
   
     private void ScorePrepare(int score)
@@ -186,9 +187,17 @@ public class GameManager : MonoBehaviour
             this.citros[i].gameObject.SetActive(false);
         }
             // ------------------ Invoke(nameof(MakeRound),3.0f);
-            SceneManager.LoadScene("Second Level");
-            MakeRound();
-            this.sirquack.gameObject.SetActive(true);
+            if (SceneManager.GetSceneByName("Pacman").IsValid())
+            {
+                SceneManager.LoadScene("Second Level");
+                MakeRound();
+                this.sirquack.gameObject.SetActive(true);
+            }
+            else
+            {
+                SceneManager.LoadScene("VictoryScreen");
+            }
+            
         } 
     }
     public void SwordGet(Sword duckie)

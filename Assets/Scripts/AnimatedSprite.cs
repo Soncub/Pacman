@@ -18,9 +18,8 @@ public class AnimatedSprite : MonoBehaviour
     }
     private void Advance()
     {
-        if (!this.spriteRenderer.enabled) // problem here ?
+        if (!this.spriteRenderer.enabled)
         {
-            //Debug.Log("Nothing here");
             return;
         }
         this.animationFrame++;
@@ -36,7 +35,7 @@ public class AnimatedSprite : MonoBehaviour
     public void Restart()
     {
         this.animationFrame = -1;
-        Advance(); // problem here
+        Advance();
     }
     private void OnEnable()
     {

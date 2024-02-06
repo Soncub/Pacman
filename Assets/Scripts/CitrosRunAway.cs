@@ -8,8 +8,7 @@ public class CitrosRunAway : CitrosBehavior
     public SpriteRenderer white;
     public SpriteRenderer justEyes;
     public AudioClip consumed;
-    
-    public bool eaten {get; private set;}
+    public bool eaten; //{get; private set;}
 
     public override void Enable(float duration)
     {
@@ -32,21 +31,6 @@ public class CitrosRunAway : CitrosBehavior
         this.blue.enabled = false;
         this.white.enabled = false;
     }
-
-    private void Eaten()
-    {
-        this.eaten = true;
-        Vector3 position = this.citros.idle.inside.position;
-        position.z = this.citros.transform.position.z;
-        this.citros.transform.position = position;
-        this.citros.idle.Enable(this.duration);
-
-        this.eyes.enabled = false;
-        this.justEyes.enabled = true;
-        this.blue.enabled = false;
-        this.white.enabled = false;
-    }
-
     private void Flash()
     {
         // ADD ANIMATED SPRITE
@@ -58,11 +42,25 @@ public class CitrosRunAway : CitrosBehavior
         }
     }
 
+    private void Eaten()
+    {
+        this.eaten = true;
+        Vector3 position = this.citros.idle.inside.position;
+        position.z = this.citros.transform.position.z;
+        this.citros.transform.position = position;
+        this.citros.idle.Enable(this.duration);
+
+        //this.eyes.enabled = true;
+        this.justEyes.enabled = true;
+        this.blue.enabled = false;
+        this.white.enabled = false;
+    }
+
     // makes ghosts slow 
     private void OnEnable()
     {
-        this.blue.GetComponent<AnimatedSprite>().Restart(); // problem here
-        this.citros.movement.speedMultiplier = 0.5f; //problem here
+        blue.GetComponent<AnimatedSprite>().Restart();
+        citros.movement.speedMultiplier = 0.5f;
         this.eaten = false;
     }  
     private void OnDisable()

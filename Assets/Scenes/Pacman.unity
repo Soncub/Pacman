@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 227684409}
   - component: {fileID: 227684410}
   m_Layer: 0
-  m_Name: Black
+  m_Name: brown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,12 +547,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227684408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -400.00006, y: -188.91, z: 1}
-  m_LocalScale: {x: 2.45, y: 3.4, z: 18.601168}
+  m_LocalPosition: {x: -0.00012207031, y: -0.5932007, z: 1.3441668}
+  m_LocalScale: {x: 3.2932086, y: 4.570167, z: 25.00307}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1309668332}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &227684410
 SpriteRenderer:
@@ -9304,7 +9304,6 @@ RectTransform:
   m_Children:
   - {fileID: 9353235}
   - {fileID: 378900851}
-  - {fileID: 227684409}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

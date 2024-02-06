@@ -112,22 +112,44 @@ public class GameManager : MonoBehaviour
         totalScore += score;
         scoreText.text = "Score: " + totalScore.ToString();
 
-         if (totalScore >= 1000) {
-            if (supplyAppeared == false){
+            if (SceneManager.GetSceneByName("Pacman").IsValid()) {
+                if (totalScore >= 1000) {
+                    if (supplyAppeared == false){
             
-            Invoke(nameof(SchoolSupplyAppear), 0f);
-            supplyAppeared = true;
+                    Invoke(nameof(SchoolSupplyAppear), 0f);
+                    supplyAppeared = true;
+                }
+
+                }
+                if (totalScore >= 3000) {
+                    if (supplyAppeared2 == false){
+            
+                        Invoke(nameof(SchoolSupplyAppear), 0f);
+                        supplyAppeared2 = true;
+                    }
+                }
             }
 
-        }
-        if (totalScore >= 3000) {
-            if (supplyAppeared2 == false){
+        if (SceneManager.GetSceneByName("Pacman").IsValid()) {
+             if (totalScore >= 8000) {
+                if (supplyAppeared == false){
             
-            Invoke(nameof(SchoolSupplyAppear), 0f);
-            supplyAppeared2 = true;
-            }
+                    Invoke(nameof(SchoolSupplyAppear), 0f);
+                    supplyAppeared = true;
+                }
 
+            }
+        
+             if (totalScore >= 12000) {
+                if (supplyAppeared2 == false){
+            
+                    Invoke(nameof(SchoolSupplyAppear), 0f);
+                    supplyAppeared2 = true;
+                }
+
+            }
         }
+
         if (totalScore >= 10000){
             if (supplyTriggered == false){
             LivesPrepare(lives+1); 

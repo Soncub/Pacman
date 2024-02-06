@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //totalScore = 0;
         CreateGame();
         supply.gameObject.SetActive(false);
         
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // if no lives + player presses any key, create new game !
+        /*// if no lives + player presses any key, create new game !
         if (this.lives <= 0)
         {
             if (Input.anyKeyDown)
@@ -54,11 +55,12 @@ public class GameManager : MonoBehaviour
             CreateGame();
         }  
 
-    }
+    }*/
 }
     private void CreateGame()
     {
         ScorePrepare(0);
+        
         LivesPrepare(3);
         MakeRound();
     }
@@ -101,6 +103,7 @@ public class GameManager : MonoBehaviour
             this.citros[i].gameObject.SetActive(false);
         }
         UnityEngine.SceneManagement.SceneManager.LoadScene("DefeatScreen");
+        totalScore = 0;
     }
   
     private void ScorePrepare(int score)
@@ -196,6 +199,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 SceneManager.LoadScene("VictoryScreen");
+                totalScore = 0;
             }
             
         } 

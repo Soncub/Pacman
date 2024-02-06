@@ -19,5 +19,6 @@ public class PlayButton : MonoBehaviour
     public void LoadLevel1()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Pacman");
+        
     }
 }

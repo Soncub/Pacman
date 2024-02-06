@@ -119,9 +119,12 @@ public class GameManager : MonoBehaviour
         }
         if (totalScore >= 3000) {
             if (supplyAppeared2 == false){
+                if (SceneManager.GetSceneByName("Second Level").IsValid()){
+                    Invoke(nameof(SchoolSupplyAppear), 0f);
+                    supplyAppeared2 = true;
+                }
             
-            Invoke(nameof(SchoolSupplyAppear), 0f);
-            supplyAppeared2 = true;
+            
             }
 
         }

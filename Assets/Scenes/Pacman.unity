@@ -446,6 +446,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5563022610540837206, guid: 619ce5483d8d9f2458d7dc40477b6f6d, type: 3}
+      propertyPath: points
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563022610540837206, guid: 619ce5483d8d9f2458d7dc40477b6f6d, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 753793697}
@@ -792,6 +796,10 @@ PrefabInstance:
     - target: {fileID: 2830265221410410264, guid: f103a73d4a16d8244a814a3b8ac7ccb9, type: 3}
       propertyPath: m_LocalScale.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085355807316499368, guid: f103a73d4a16d8244a814a3b8ac7ccb9, type: 3}
+      propertyPath: points
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6085355807316499368, guid: f103a73d4a16d8244a814a3b8ac7ccb9, type: 3}
       propertyPath: target
@@ -7547,6 +7555,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2674305092184360296, guid: 44bf974a0546e6445a8006e0040cbf78, type: 3}
+      propertyPath: points
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674305092184360296, guid: 44bf974a0546e6445a8006e0040cbf78, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 753793697}
@@ -11107,7 +11119,7 @@ PrefabInstance:
       objectReference: {fileID: 2079488674}
     - target: {fileID: 3616480550624349229, guid: 195c69ec614ced64b8fe3dd63af486b3, type: 3}
       propertyPath: duration
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4081039485044400512, guid: 195c69ec614ced64b8fe3dd63af486b3, type: 3}
       propertyPath: m_Name
@@ -11188,6 +11200,10 @@ PrefabInstance:
     - target: {fileID: 4539629756726585904, guid: 195c69ec614ced64b8fe3dd63af486b3, type: 3}
       propertyPath: speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156905782051594831, guid: 195c69ec614ced64b8fe3dd63af486b3, type: 3}
+      propertyPath: points
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8156905782051594831, guid: 195c69ec614ced64b8fe3dd63af486b3, type: 3}
       propertyPath: target
@@ -11386,6 +11402,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3618492401580359344, guid: f8025c8c77bf9594994cdf62f855f0ee, type: 3}
+      propertyPath: points
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6051006366721489269, guid: f8025c8c77bf9594994cdf62f855f0ee, type: 3}
       propertyPath: m_Name
       value: PencilSupply

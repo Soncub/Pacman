@@ -70,4 +70,12 @@ public class Citros : MonoBehaviour
            // Debug.Log("Nothing is there");
         }
     }
+
+    public void SetPosition(Vector3 position)
+    {
+        // Keep the z-position the same since it determines draw depth
+        position.z = transform.position.z;
+        transform.position = position;
+    }
+    
 }

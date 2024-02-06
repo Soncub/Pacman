@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-        if (SceneManager.GetSceneByName("Pacman").IsValid()) {
+        if (SceneManager.GetSceneByName("Second Level").IsValid()) {
              if (totalScore >= 8000) {
                 if (supplyAppeared == false){
             

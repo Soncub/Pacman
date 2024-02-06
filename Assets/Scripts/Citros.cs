@@ -34,7 +34,7 @@ public class Citros : MonoBehaviour
         this.runaway.Disable();
         this.chase.Disable();
         this.scatter.Enable();
-        //this.idle.Disable();
+        this.idle.Disable();
         if(this.idle != this.initialBehavior)
         {
             this.idle.Disable();

@@ -192,9 +192,10 @@ public class GameManager : MonoBehaviour
             // ------------------ Invoke(nameof(MakeRound),3.0f);
             if (SceneManager.GetSceneByName("Pacman").IsValid())
             {
-                SceneManager.LoadScene("Second Level");
-                MakeRound();
-                this.sirquack.gameObject.SetActive(true);
+                StartCoroutine(DelaySceneLoad());
+                //SceneManager.LoadScene("Second Level");
+                //MakeRound();
+                //this.sirquack.gameObject.SetActive(true);
             }
             else
             {
@@ -204,6 +205,15 @@ public class GameManager : MonoBehaviour
             
         } 
     }
+
+    IEnumerator DelaySceneLoad()
+    {
+        yield return new WaitForSeconds(3.0f); // Wait 1 seconds
+        SceneManager.LoadScene("Second Level");
+        MakeRound();
+        this.sirquack.gameObject.SetActive(true);
+    }
+
     public void SwordGet(Sword duckie)
     {
         for (int i = 0; i < this.citros.Length; i++)

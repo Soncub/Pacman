@@ -11402,7 +11402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3618492401580359344, guid: f8025c8c77bf9594994cdf62f855f0ee, type: 3}
       propertyPath: points
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6051006366721489269, guid: f8025c8c77bf9594994cdf62f855f0ee, type: 3}
       propertyPath: m_Name

@@ -34,7 +34,7 @@ public class Citros : MonoBehaviour
         this.runaway.Disable();
         this.chase.Disable();
         this.scatter.Enable();
-        this.idle.Disable();
+        //this.idle.Disable();
         if(this.idle != this.initialBehavior)
         {
             this.idle.Disable();
@@ -44,6 +44,14 @@ public class Citros : MonoBehaviour
             this.initialBehavior.Enable();
         }
     }
+
+    public void SetPosition(Vector3 position)
+    {
+        // Keep the z-position the same since it determines draw depth
+        position.z = transform.position.z;
+        transform.position = position;
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "SirQuack")     
